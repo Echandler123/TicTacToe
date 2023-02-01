@@ -58,4 +58,7 @@ public class Square {
     public String toString() {
         return this.marker;
     }
+
+    //makedraw params x image o image graphics g ind dim x,y view makerer 4 which image to draw if winning fill green
+    // rect draw black rect     draw image
 }

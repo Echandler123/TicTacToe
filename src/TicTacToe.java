@@ -14,6 +14,7 @@ import java.util.Scanner;
 
 public class TicTacToe
 {
+    //instancevariasble view
     /** Board Markers **/
     public static final String X_MARKER = "X";
     public static final String O_MARKER = "O";
@@ -42,6 +43,7 @@ public class TicTacToe
      * The view is initialized with this TicTacToe object
      */
     public TicTacToe() {
+        //initialize view
         // Initialize Squares in the board
         this.board = new Square[3][3];
         for(int row = 0; row < this.board.length; row++) {
@@ -122,6 +124,7 @@ public class TicTacToe
         }
 
         this.printBoard();
+        //call repaint
         this.isGameOver = true;
 
         // Determine if there was a winner
