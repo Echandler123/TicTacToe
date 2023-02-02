@@ -58,6 +58,16 @@ public class Square {
     public String toString() {
         return this.marker;
     }
+    public int getWidth()
+    {
+        return col;
+    }
+    public void draw(Image o, Image x, Graphics g, int firstpoint,int width)
+    {
+
+    }
+
+
 
     //makedraw params x image o image graphics g ind dim x,y view makerer 4 which image to draw if winning fill green
     // rect draw black rect     draw image
