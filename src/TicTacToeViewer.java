@@ -7,7 +7,8 @@ public class TicTacToeViewer {
     private int Width;
     private Image X;
     private Image O;
-    private int firstpoint;
+    private int firstpointx;
+    private int firstpointy;
     //constructor
     public TicTacToeViewer(Square[][] board)
     {
@@ -20,8 +21,7 @@ public class TicTacToeViewer {
     {
         for(int i = 0; i < board.length;i++) {
             for(int j = 0; j < board.length;j++){
-
-                board[i][j].Draw(X,O,g,firstpoint, Width,);
+                board[i][j].Draw(O,X,g,firstpointx,firstpointy, Width);
             }
         }
     }
