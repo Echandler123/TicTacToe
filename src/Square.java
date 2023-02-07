@@ -1,5 +1,6 @@
 import java.awt.*;
 
+
 /**
  * A class written to support the TicTacToe Game.
  *
@@ -67,15 +68,22 @@ public class Square {
     }
     public int getWidth()
     {
-        return col;
+        return 80;
     }
-    public void Draw(Image O, Image X, Graphics g, int firstpointx, int firstpointy, int width)
+    public void Draw(Image O, Image X, Graphics g, int firstpointx, int firstpointy, int Width)
     {
         this.firstpointx = firstpointx;
         this.firstpointy = firstpointy;
-        pointx = width*row;
-        pointy = width*col;
-        g.drawRect(firstpointx  + pointx,firstpointy + pointy,width,width);
+        pointx = Width*row;
+        pointy = Width*col;
+        g.setColor(Color.BLACK);
+        g.drawRect(firstpointx  + pointx,firstpointy + pointy,Width, Width);
+        g.setColor(Color.white);
+        if(isWinningSquare == true)
+        {
+            g.setColor(Color.green);
+        }
+        g.fillRect(firstpointx  + pointx,firstpointy + pointy,Width, Width);
 
     }
 
