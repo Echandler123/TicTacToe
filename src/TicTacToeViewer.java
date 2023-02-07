@@ -7,8 +7,8 @@ public class TicTacToeViewer extends JFrame{
     private int Width;
     private Image X;
     private Image O;
-    private int firstpointx = 100;
-    private int firstpointy = 100;
+    private int firstpointx = 150;
+    private int firstpointy = 150;
     private final int WINDOW_WIDTH = 1000;
     private final int WINDOW_HEIGHT = 800;
     private final int SQUARE_SIZE = 200;
@@ -33,7 +33,14 @@ public class TicTacToeViewer extends JFrame{
                 board[j][i].Draw(O,X,g,firstpointx,firstpointy, Width);
             }
         }
-        g.drawString("0",200,50);
+        g.setColor(Color.red);
+        g.setFont(new Font("SERIF",Font.ITALIC,50));
+        g.drawString("0",225,100);
+        g.drawString("1",425,100);
+        g.drawString("2",625,100);
+        g.drawString("0",50,275);
+        g.drawString("1",50,475);
+        g.drawString("2",50,675);
     }
 
     //crate image objects
