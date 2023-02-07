@@ -68,30 +68,31 @@ public class Square {
     }
     public int getWidth()
     {
-        return 80;
+        return 200;
     }
     public void Draw(Image O, Image X, Graphics g, int firstpointx, int firstpointy, int Width)
     {
         this.firstpointx = firstpointx;
         this.firstpointy = firstpointy;
-        pointx = Width*row;
-        pointy = Width*col;
-        g.setColor(Color.BLACK);
-        g.drawRect(firstpointx  + pointx,firstpointy + pointy,Width, Width);
-        if(marker.equals("X"))
-        {
-            g.drawImage(X,firstpointx + pointx, firstpointy + pointy,T);
-        }
-        if(marker.equals("O"))
-        {
-            g.drawImage(O, firstpointx + pointx, firstpointy + pointy,T);
-        }
-        g.setColor(Color.white);
+        pointx = firstpointx+ Width*row;
+        pointy = firstpointy+ Width*col;
         if(isWinningSquare == true)
         {
             g.setColor(Color.green);
+            g.fillRect(firstpointx  + pointx,firstpointy + pointy,Width, Width);
         }
-        g.fillRect(firstpointx  + pointx,firstpointy + pointy,Width, Width);
+        g.setColor(Color.black);
+        g.drawRect(pointx, pointy,Width,Width);
+        if(marker.equals("X"))
+        {
+            g.drawImage(X, pointx,  pointy, 200,200,T);
+        }
+        else if(marker.equals("O"))
+        {
+            g.drawImage(O,  + pointx,  pointy,200,200,T);
+        }
+
+
 
     }
 

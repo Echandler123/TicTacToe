@@ -11,7 +11,7 @@ public class TicTacToeViewer extends JFrame{
     private int firstpointy = 100;
     private final int WINDOW_WIDTH = 1000;
     private final int WINDOW_HEIGHT = 800;
-    private final int SQUARE_SIZE = 20;
+    private final int SQUARE_SIZE = 200;
     private TicTacToe t;
     //constructor
     public TicTacToeViewer(Square[][] board, TicTacToe t)
@@ -25,17 +25,15 @@ public class TicTacToeViewer extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         this.setVisible(true);
-
     }
     public void paint(Graphics g)
     {
-
-        for(int i = 0; i < board.length;i++) {
-            for(int j = 0; j < board.length;j++){
-                //board[i][j].setWinningSquare();
-                board[i][j].Draw(O,X,g,firstpointx,firstpointy, Width);
+        for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board.length; j++){
+                board[j][i].Draw(O,X,g,firstpointx,firstpointy, Width);
             }
         }
+        g.drawString("0",200,50);
     }
 
     //crate image objects
