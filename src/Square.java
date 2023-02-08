@@ -63,13 +63,18 @@ public class Square {
     /**
      * @return the marker for the square
      */
-    public String toString() {
-        return this.marker;
-    }
     public int getWidth()
     {
         return 200;
     }
+    public String toString() {
+        return this.marker;
+    }
+    /*
+    takes in the X and O image the width of the square and point where you should start drawing the board draws the 9
+    squares of the boarder and whatever marker the user input and if it is a winning square it highlights the winning
+    squares in green and prints who wins
+     */
     public void Draw(Image O, Image X, Graphics g, int firstpointx, int firstpointy, int Width)
     {
         this.firstpointx = firstpointx;
@@ -79,21 +84,32 @@ public class Square {
         if(isWinningSquare == true)
         {
             g.setColor(Color.green);
-            g.fillRect(firstpointx  + pointx,firstpointy + pointy,Width, Width);
+            g.fillRect(pointx,pointy,Width, Width);
+            g.setColor(Color.black);
+            g.setFont(new Font("SERIF",Font.ITALIC,100));
+            if(marker.equals("X"))
+            {
+                g.drawString("X wins",310,795);
+            }
+            else if(marker.equals("O"))
+            {
+                g.drawString("O wins",310,795);
+            }
+            else
+            {
+                g.drawString("its a tie",310,795);
+            }
         }
         g.setColor(Color.black);
         g.drawRect(pointx, pointy,Width,Width);
         if(marker.equals("X"))
         {
-            g.drawImage(X, pointx,  pointy, 200,200,T);
+            g.drawImage(X, pointx,  pointy, Width,Width,T);
         }
         else if(marker.equals("O"))
         {
-            g.drawImage(O,  + pointx,  pointy,200,200,T);
+            g.drawImage(O,  + pointx,  pointy,Width,Width,T);
         }
-
-
-
     }
 
 

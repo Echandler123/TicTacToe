@@ -8,12 +8,12 @@ public class TicTacToeViewer extends JFrame{
     private Image X;
     private Image O;
     private int firstpointx = 150;
-    private int firstpointy = 150;
+    private int firstpointy = 125;
     private final int WINDOW_WIDTH = 1000;
     private final int WINDOW_HEIGHT = 800;
     private final int SQUARE_SIZE = 200;
     private TicTacToe t;
-    //constructor
+    //takes in the board 2d array and observer creates the image for the X and O and makes the window for the game
     public TicTacToeViewer(Square[][] board, TicTacToe t)
     {
         this.t = t;
@@ -26,6 +26,10 @@ public class TicTacToeViewer extends JFrame{
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         this.setVisible(true);
     }
+    /*
+    iterates through each square in the array and calls draw on them also draws the numbers on the outside of the
+    board
+     */
     public void paint(Graphics g)
     {
         for(int i = 0; i < board.length; i++){
@@ -35,18 +39,11 @@ public class TicTacToeViewer extends JFrame{
         }
         g.setColor(Color.red);
         g.setFont(new Font("SERIF",Font.ITALIC,50));
-        g.drawString("0",225,100);
-        g.drawString("1",425,100);
-        g.drawString("2",625,100);
-        g.drawString("0",50,275);
-        g.drawString("1",50,475);
-        g.drawString("2",50,675);
+        g.drawString("0",225,75);
+        g.drawString("1",425,75);
+        g.drawString("2",625,75);
+        g.drawString("0",50,250);
+        g.drawString("1",50,450);
+        g.drawString("2",50,650);
     }
-
-    //crate image objects
-    //iterate through squares call draw on each
-    //getImages() call draw image
-    //draw axis
-    //display winning message
-
 }
