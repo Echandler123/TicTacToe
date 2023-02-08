@@ -22,13 +22,14 @@ public class Square {
     private int pointy;
     private int firstpointx;
     private int firstpointy;
-            
+
     private boolean isWinningSquare;
     private TicTacToeViewer T;
 
     /**
      * Constructor to initialize one Square of the
      * TicTacToe board
+     *
      * @param row the row the square is in
      * @param col the column the square is in
      */
@@ -49,11 +50,13 @@ public class Square {
         this.marker = marker;
     }
 
-    public void setWinningSquare() {this.isWinningSquare = true;
+    public void setWinningSquare() {
+        this.isWinningSquare = true;
     }
 
     /**
      * Checks if the square has the BLANK marker
+     *
      * @return True if the square is empty, False otherwise
      */
     public boolean isEmpty() {
@@ -63,57 +66,45 @@ public class Square {
     /**
      * @return the marker for the square
      */
-    public int getWidth()
-    {
+    public int getWidth() {
         return 200;
     }
+
     public String toString() {
         return this.marker;
     }
+
     /*
     takes in the X and O image the width of the square and point where you should start drawing the board draws the 9
     squares of the boarder and whatever marker the user input and if it is a winning square it highlights the winning
-    squares in green and prints who wins
+    squares in green and prints who wins or if it is a tie
      */
-    public void Draw(Image O, Image X, Graphics g, int firstpointx, int firstpointy, int Width)
-    {
+    public void Draw(Image O, Image X, Graphics g, int firstpointx, int firstpointy, int Width) {
         this.firstpointx = firstpointx;
         this.firstpointy = firstpointy;
-        pointx = firstpointx+ Width*row;
-        pointy = firstpointy+ Width*col;
-        if(isWinningSquare == true)
-        {
+        pointx = firstpointx + Width * row;
+        pointy = firstpointy + Width * col;
+        if (isWinningSquare == true) {
             g.setColor(Color.green);
-            g.fillRect(pointx,pointy,Width, Width);
+            g.fillRect(pointx, pointy, Width, Width);
             g.setColor(Color.black);
-            g.setFont(new Font("SERIF",Font.ITALIC,100));
-            if(marker.equals("X"))
-            {
-                g.drawString("X wins",310,795);
-            }
-            else if(marker.equals("O"))
-            {
-                g.drawString("O wins",310,795);
-            }
-            else
-            {
-                g.drawString("its a tie",310,795);
+            g.setFont(new Font("SERIF", Font.ITALIC, 100));
+            if (marker.equals("X")) {
+                g.drawString("X wins", 310, 795);
+            } else if (marker.equals("O")) {
+                g.drawString("O wins", 310, 795);
+            } else {
+                g.drawString("its a tie", 310, 795);
             }
         }
         g.setColor(Color.black);
-        g.drawRect(pointx, pointy,Width,Width);
-        if(marker.equals("X"))
-        {
-            g.drawImage(X, pointx,  pointy, Width,Width,T);
-        }
-        else if(marker.equals("O"))
-        {
-            g.drawImage(O,  + pointx,  pointy,Width,Width,T);
+        g.drawRect(pointx, pointy, Width, Width);
+        if (marker.equals("X")) {
+            g.drawImage(X, pointx, pointy, Width, Width, T);
+        } else if (marker.equals("O")) {
+            g.drawImage(O, +pointx, pointy, Width, Width, T);
         }
     }
 
 
-
-    //makedraw params x image o image graphics g ind dim x,y view makerer 4 which image to draw if winning fill green
-    // rect draw black rect     draw image
 }
